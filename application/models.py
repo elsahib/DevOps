@@ -14,6 +14,7 @@ class Players(db.Model):
     player_age = db.Column(db.Integer, nullable=False)
     player_team = db.Column(db.String(30), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
+    player_stat = db.relationship('Stats', backref='stats', lazy=True)
   
 
     def __repr__(self):
