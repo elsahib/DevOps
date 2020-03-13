@@ -17,10 +17,10 @@ login_manager = LoginManager(app)
 #defining which function handles logins
 login_manager.login_view = 'login'
 #add the URI to the app
-app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URI2')
 # set this to avoid getting warnings
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = getenv('SECRET_KEY')
+app.config['SECRET_KEY'] = getenv('SECRET_KEY2')
 
 # create the database object
 db=SQLAlchemy(app)

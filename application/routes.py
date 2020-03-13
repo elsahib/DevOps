@@ -1,4 +1,4 @@
-from application.models import Posts, Users
+from application.models import Users, Stats, Players
 # import render_template function from the flask module
 from flask import render_template, redirect, url_for, request
 # import the app object from the ./application/__init__.py
