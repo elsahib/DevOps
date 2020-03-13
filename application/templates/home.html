@@ -1,16 +1,16 @@
 {% extends "layout.html" %}
 {% block body_content %}
 <section id="intro">
-<p>Welcome to my first web app!</p>
-<p><a href="{{ url_for('about') }}">About Page</a></p>
-<p><a href="{{ url_for('register') }}">Registeration Page</a></p>
+<p>Welcome to my Home Page!</p>
+
 {% if posts %}
 
     {% for post in posts %}
         <div>
             <h3>{{ post.title }}</h3>
-            <h4>{{ post.first_name }} {{ post.last_name }}</h4>
-            <p>{{ post.content }}</p>
+        <span>by <i>{{ post.author.first_name }} {{ post.author.last_name }}</i></span>
+        <span>on the <i>{{ post.date_posted }}</i></span>
+        <p>{{ post.content }}</p>
         </div>
     {% endfor %}
 {% else %}
