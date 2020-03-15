@@ -13,7 +13,7 @@ class Players(db.Model):
     player_name = db.Column(db.String(30), nullable=False)
     player_age = db.Column(db.Integer, nullable=False)
     player_team = db.Column(db.String(30), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
+    id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     player_stat = db.relationship('Stats', backref='stats', lazy=True)
   
 
@@ -38,7 +38,7 @@ class Stats(db.Model):
         return ''.join(['UserID: ', str(self.stat_id), '\r\n', 'Email: ', self.player_id])
 
 class Users(db.Model, UserMixin):
-    user_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
     email = db.Column(db.String(150), nullable=False, unique=True)
@@ -47,7 +47,7 @@ class Users(db.Model, UserMixin):
 
     def __repr__(self):
         return ''.join([
-            'User ID: ', str(self.user_id), '\r\n',
+            'User ID: ', str(self.id), '\r\n',
             'Email: ', self.email, '\r\n',
             'Name: ', self.first_name, ' ', self.last_name
         ])

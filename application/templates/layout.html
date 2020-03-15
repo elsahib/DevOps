@@ -301,7 +301,9 @@ footer > span {
                   <li>
                   <a href="{{ url_for('post') }}" class="nav-link">Posts</a></li>
                   <li>
-                  <a href="{{ url_for('logout') }}" class="nav-link">{{ current_user.email }} <br>Logout</a></li>
+                    <a href="{{ url_for('account') }}" class="nav-link">Account</a></li>
+                  <li>
+                  <a href="{{ url_for('logout') }}" class="nav-link">{{ current_user.first_name }} <br>Logout</a></li>
                   
                   {% else %}
                   <li>
