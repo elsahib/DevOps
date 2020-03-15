@@ -1,10 +1,10 @@
-from application.models import Posts, Users
+from application.models import Users, Players, Stats
 # import render_template function from the flask module
 from flask import render_template, redirect, url_for, request
 # import the app object from the ./application/__init__.py
 from application import app, db, bcrypt
 # import PostForm from application.forms
-from application.forms import PostForm, RegistrationForm, LoginForm
+from application.forms import StatsForm, RegistrationForm, LoginForm, PlayerForm
 # import from Flask_login module
 from flask_login import login_user, current_user, logout_user, login_required
 # import further forms functionality
@@ -13,8 +13,8 @@ from application.forms import RegistrationForm, LoginForm, UpdateAccountForm
 @app.route('/')
 @app.route('/home')
 def home():
- postData = Posts.query.all()
- return render_template('home.html', title='Home', posts=postData)
+ playerData = Players.query.all()
+ return render_template('home.html', title='Home', posts=playerData)
  
 @app.route('/about')
 def about():
@@ -33,23 +33,47 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        return redirect(url_for('post'))
+        return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
 
-@app.route('/posts', methods=['GET', 'POST'])
+@app.route('/addplayer', methods=['GET', 'POST'])
 @login_required 
-def post():
-    form = PostForm()
+def addplayer():
+    form = PlayerForm()
     if form.validate_on_submit():
+<<<<<<< HEAD
         postData = Posts(title = form.title.data,content = form.content.data, author=current_user)
         db.session.add(postData)
         db.session.commit()
         return redirect(url_for('home'))
+=======
+        playerData = Players(player_name = form.player_name.data,player_age = form.player_age.data,player_team =form.player_team.data, author=current_user)
+        db.session.add(playerData)
+        db.session.commit()
+        return redirect(url_for('addplayer'))
 
     else:
         print(form.errors)
 
-    return render_template('posts.html', title='Post', form=form)
+    return render_template('addplayer.html', title='Add A Player', form=form)
+
+
+@app.route('/addstats', methods=['GET', 'POST'])
+@login_required 
+def addstats():
+
+    form = StatsForm()
+    if form.validate_on_submit():
+        statsData = Stats(goals = form.goals.data,assists = form.assists.data,chances =form.chances.data,shots =form.shots.data,minutes =form.minutes.data,date =form.date.data, stat=form.player_id.data)
+        db.session.add(statsData)
+        db.session.commit()
+        return redirect(url_for('addstats'))
+>>>>>>> trials
+
+    else:
+        print(form.errors)
+
+    return render_template('playerstats.html', title='Add Stats', form=form)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -66,6 +90,8 @@ def login():
             else:
                 return redirect(url_for('home'))
     return render_template('login.html', title='Login', form=form)
+
+
 
 @app.route("/logout")
 @login_required
@@ -95,7 +121,12 @@ def account():
 def account_delete():
     user = current_user.id
     account = Users.query.filter_by(id=user).first()
+<<<<<<< HEAD
     posts = Posts.query.filter_by(user_id=user)
+=======
+    players = Players.query.filter_by(player_id=user)
+    posts = Stats.query.filter_by(player_id=user)
+>>>>>>> trials
     for post in posts :
         db.session.delete(post)
     logout_user()

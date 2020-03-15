@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "python.pythonPath": "/home/qa-admin/DevOps/venv/bin/python3.7"
+=======
+    "python.pythonPath": "/home/codeyourfuture/Documents/DevOps/venv/bin/python2.7"
+>>>>>>> trials
 }
