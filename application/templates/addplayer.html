@@ -1,0 +1,51 @@
+{% extends "layout.html" %} {% block body_content %}
+<section id="intro">
+  <h1>Players Page</h1>
+  <p>Add a Player to track</p>
+  <div class="form">
+    <form method="POST" action="">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        {{ form.player_name.label }} 
+        {{ form.player_name }} 
+        {% if form.player_name.errors %}
+        <div class="error">
+          {% for error in form.player_name.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <br />
+      <div class="form-group">
+        {{ form.player_age.label }} 
+        {{ form.player_age }} 
+        {% if form.player_age.errors %}
+        <div class="error">
+          {% for error in form.player_age.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <br />
+      <div class="form_group">
+        {{ form.player_team.label }} 
+        {{ form.player_team }} 
+        {% if form.player_team.errors %}
+        <div class="error">
+          {% for error in form.player_team.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <br />
+      <br />
+      <div class="form_group">
+        {{ form.submit }}
+      </div>
+    </form>
+  </div>
+  {% endblock body_content %}
+</section>

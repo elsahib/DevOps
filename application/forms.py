@@ -1,24 +1,91 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField, PasswordField, BooleanField
+from wtforms import StringField, SubmitField, DateField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from application.models import Users
+from application.models import Users, Players, Stats
 from flask_login import current_user
+from wtforms.ext.sqlalchemy.fields import QuerySelectField
 
-class PostForm(FlaskForm):
+# class PostForm(FlaskForm):
     
-    title = StringField('Title',
+#     title = StringField('Title',
+#         validators = [
+#             DataRequired(),
+#             Length(min=2, max=100)
+#         ]
+#     )
+#     content = TextAreaField('Content',
+#         validators = [
+#             DataRequired(),
+#             Length(min=2, max=1000)
+#         ]
+#     )
+#     submit = SubmitField('Post Content')
+class PlayerForm(FlaskForm):
+    
+    player_name = StringField('Player Full Name',
         validators = [
             DataRequired(),
             Length(min=2, max=100)
         ]
     )
-    content = TextAreaField('Content',
+    player_age = StringField('Player Age',
         validators = [
             DataRequired(),
-            Length(min=2, max=1000)
+            Length(min=1, max=3)
         ]
     )
-    submit = SubmitField('Post Content')
+    player_team = StringField('Player Team',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=100)
+        ]
+    )
+    submit = SubmitField('Add Player')
+
+class StatsForm(FlaskForm):
+    # user = current_user.id
+    player_id = QuerySelectField(
+        'Choose a Player',
+        query_factory=lambda: Players.query.filter_by(id=current_user.id),
+        allow_blank=False
+    )
+    
+    goals = StringField('Goals',
+        validators = [
+            DataRequired(),
+            Length(min=1, max=2)
+        ]
+    )
+    assists = StringField('Assists',
+        validators = [
+            DataRequired(),
+            Length(min=1, max=3)
+        ]
+    )
+    chances = StringField('Chances',
+        validators = [
+            DataRequired(),
+            Length(min=1, max=3)
+        ]
+    )
+
+    shots = StringField('Shots',
+        validators = [
+            DataRequired(),
+            Length(min=1, max=3)
+        ]
+    )
+    minutes = StringField('Minutes Played',
+        validators = [
+            DataRequired(),
+            Length(min=1, max=3)
+        ]
+    )
+    date = DateField('Enter Date(dd-mm-yy)',
+            format="%d-%m-%Y")
+        
+    
+    submit = SubmitField('Add Stats')
 
 class RegistrationForm(FlaskForm):
     first_name = StringField('First Name',
