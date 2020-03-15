@@ -1,14 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, DateField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-<<<<<<< HEAD
-from application.models import Users
-from flask_login import current_user
-
-class PostForm(FlaskForm):
-    
-    title = StringField('Title',
-=======
 from application.models import Users, Players, Stats
 from flask_login import current_user
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
@@ -31,24 +23,11 @@ from wtforms.ext.sqlalchemy.fields import QuerySelectField
 class PlayerForm(FlaskForm):
     
     player_name = StringField('Player Full Name',
->>>>>>> trials
         validators = [
             DataRequired(),
             Length(min=2, max=100)
         ]
     )
-<<<<<<< HEAD
-    content = TextAreaField('Content',
-        validators = [
-            DataRequired(),
-            Length(min=2, max=1000)
-        ]
-    )
-    submit = SubmitField('Post Content')
-
-class RegistrationForm(FlaskForm):
-    first_name = StringField('First Name',
-=======
     player_age = StringField('Player Age',
         validators = [
             DataRequired(),
@@ -56,20 +35,11 @@ class RegistrationForm(FlaskForm):
         ]
     )
     player_team = StringField('Player Team',
->>>>>>> trials
         validators = [
             DataRequired(),
             Length(min=2, max=30)
         ]
     )
-<<<<<<< HEAD
-    last_name = StringField('Last Name',
-        validators = [
-            DataRequired(),
-            Length(min=2, max=30)
-        ]
-    )
-=======
     submit = SubmitField('Add Player')
 
 class StatsForm(FlaskForm):
@@ -130,7 +100,6 @@ class RegistrationForm(FlaskForm):
             Length(min=2, max=30)
         ]
     )
->>>>>>> trials
     email = StringField('Email',
         validators = [
             DataRequired(),

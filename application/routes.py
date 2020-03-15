@@ -41,12 +41,6 @@ def register():
 def addplayer():
     form = PlayerForm()
     if form.validate_on_submit():
-<<<<<<< HEAD
-        postData = Posts(title = form.title.data,content = form.content.data, author=current_user)
-        db.session.add(postData)
-        db.session.commit()
-        return redirect(url_for('home'))
-=======
         playerData = Players(player_name = form.player_name.data,player_age = form.player_age.data,player_team =form.player_team.data, author=current_user)
         db.session.add(playerData)
         db.session.commit()
@@ -68,7 +62,6 @@ def addstats():
         db.session.add(statsData)
         db.session.commit()
         return redirect(url_for('addstats'))
->>>>>>> trials
 
     else:
         print(form.errors)
@@ -121,12 +114,8 @@ def account():
 def account_delete():
     user = current_user.id
     account = Users.query.filter_by(id=user).first()
-<<<<<<< HEAD
-    posts = Posts.query.filter_by(user_id=user)
-=======
     players = Players.query.filter_by(player_id=user)
     posts = Stats.query.filter_by(player_id=user)
->>>>>>> trials
     for post in posts :
         db.session.delete(post)
     logout_user()
