@@ -5,21 +5,7 @@ from application.models import Users, Players, Stats
 from flask_login import current_user
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 
-# class PostForm(FlaskForm):
-    
-#     title = StringField('Title',
-#         validators = [
-#             DataRequired(),
-#             Length(min=2, max=100)
-#         ]
-#     )
-#     content = TextAreaField('Content',
-#         validators = [
-#             DataRequired(),
-#             Length(min=2, max=1000)
-#         ]
-#     )
-#     submit = SubmitField('Post Content')
+
 class PlayerForm(FlaskForm):
     
     player_name = StringField('Player Full Name',
@@ -86,14 +72,6 @@ class StatsForm(FlaskForm):
         
     
     submit = SubmitField('Add Stats')
-
-
-    def validate_date_player_id(self, player_id, date):
-        query_date=lambda: Stats.query.filter_by(date=date.data)
-        query_player=lambda: Stats.query.filter_by(player_id=player_id.data)
-        if query_date and query_player:
-            raise ValidationError('This player has Stats for this date already')
-    
 
 class RegistrationForm(FlaskForm):
     first_name = StringField('First Name',
