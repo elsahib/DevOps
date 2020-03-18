@@ -1,4 +1,4 @@
 /venv/*
 /__pycashe__/*
 *.pyc
-
+/.vscode/*

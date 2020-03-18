@@ -1,7 +1,29 @@
 {% extends "layout.html" %}
 {% block body_content %}
 <section id="intro">
-<p>This is the About page!</p>
-<a href="/home">Click here</a> to go home
+    <h1>About this Web App</h1>
+<p>This application is to demonestrate and ability of the cohort to create a CURD Application</p>
+<p>This application will enable it's users to follow the statistics of their favourite players.
+    The user will need to follow this flow to be able to add layer statistics:
+    </p>
+    <ol>
+        <li>
+            Create an account with his/her name email and password
+        </li>
+        <li>
+            Add a player to start tracking his statistics for the season
+        </li>
+        <li>
+            Add stats to your added players ( can’t jump here without having at least one player to assign stats to )
+            <br />
+            * * A player may have many stats on different dates.
+        </li>
+        <li>
+            The user may input some data wrong and may want to edit them 
+        </li>
+        <li>
+            The user may decide he doesn’t want to keep track of one of the players that he already has therefore he should be able to delete players.
+        </li>
+    </ol>
 </section>
 {% endblock body_content %}

@@ -1,5 +1,5 @@
 [Unit]
-Description=My Flask Blog
+Description=My Players Tracker
 [Service]
 User=pythonadm
 WorkingDirectory=/opt/flask-app
