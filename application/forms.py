@@ -87,6 +87,14 @@ class StatsForm(FlaskForm):
     
     submit = SubmitField('Add Stats')
 
+
+    def validate_date(self,player_id, date):
+        query_date=lambda: Stats.query.filter_by(date=date)
+        query_player=lambda: Stats.query.filter_by(player_id=date)
+        if query_date and query_player:
+            raise ValidationError('This player has Stats for this date already')
+    
+
 class RegistrationForm(FlaskForm):
     first_name = StringField('First Name',
         validators = [
