@@ -88,7 +88,7 @@ class StatsForm(FlaskForm):
     submit = SubmitField('Add Stats')
 
 
-    def validate_date(self,player_id, date):
+    def validate_date_player_id(self, player_id, date):
         query_date=lambda: Stats.query.filter_by(date=date.data)
         query_player=lambda: Stats.query.filter_by(player_id=player_id.data)
         if query_date and query_player:
