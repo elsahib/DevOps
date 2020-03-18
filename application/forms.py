@@ -89,8 +89,8 @@ class StatsForm(FlaskForm):
 
 
     def validate_date(self,player_id, date):
-        query_date=lambda: Stats.query.filter_by(date=date)
-        query_player=lambda: Stats.query.filter_by(player_id=date)
+        query_date=lambda: Stats.query.filter_by(date=date.data)
+        query_player=lambda: Stats.query.filter_by(player_id=player_id.data)
         if query_date and query_player:
             raise ValidationError('This player has Stats for this date already')
     
