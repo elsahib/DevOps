@@ -9,17 +9,68 @@ from application.forms import StatsForm, RegistrationForm, LoginForm, PlayerForm
 from flask_login import login_user, current_user, logout_user, login_required
 # import further forms functionality
 from application.forms import RegistrationForm, LoginForm, UpdateAccountForm
+
+
 # define routes for / & /home, this function will be called when these are accessed
+# General site information accessable to everyone
+#========== Home Page ============
 @app.route('/')
 @app.route('/home')
 def home():
  playerData = Players.query.all()
  return render_template('home.html', title='Home', posts=playerData)
- 
+
+#========== About Page ============
 @app.route('/about')
 def about():
     return render_template('about.html', title='About')
 
+########### Players & Stats Management ########
+#========== Adding a Player ===================
+@app.route('/addplayer', methods=['GET', 'POST'])
+@login_required 
+def addplayer():
+    form = PlayerForm()
+    if form.validate_on_submit():
+        playerData = Players(player_name = form.player_name.data,player_age = form.player_age.data,player_team =form.player_team.data, author=current_user)
+        db.session.add(playerData)
+        db.session.commit()
+        return redirect(url_for('addplayer'))
+
+    else:
+        print(form.errors)
+
+    return render_template('addplayer.html', title='Add A Player', form=form)
+
+#========= Adding Stats =====================
+@app.route('/addstats', methods=['GET', 'POST'])
+@login_required 
+def addstats():
+
+    form = StatsForm()
+    if form.validate_on_submit():
+        statsData = Stats(goals = form.goals.data,assists = form.assists.data,chances =form.chances.data,shots =form.shots.data,minutes =form.minutes.data,date =form.date.data, stat=form.player_id.data)
+        db.session.add(statsData)
+        db.session.commit()
+        return redirect(url_for('addstats'))
+
+    else:
+        print(form.errors)
+
+    return render_template('playerstats.html', title='Add Stats', form=form)
+
+#========= Editing Stats ====================
+
+#========= Editing Players ==================
+
+#========= Removing a Player ================
+
+#========= Removing a Stat ==================
+
+
+
+########### User Management #################
+#========== User Registration Page ===========
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -36,37 +87,7 @@ def register():
         return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
 
-@app.route('/addplayer', methods=['GET', 'POST'])
-@login_required 
-def addplayer():
-    form = PlayerForm()
-    if form.validate_on_submit():
-        playerData = Players(player_name = form.player_name.data,player_age = form.player_age.data,player_team =form.player_team.data, author=current_user)
-        db.session.add(playerData)
-        db.session.commit()
-        return redirect(url_for('addplayer'))
-
-    else:
-        print(form.errors)
-
-    return render_template('addplayer.html', title='Add A Player', form=form)
-
-
-@app.route('/addstats', methods=['GET', 'POST'])
-@login_required 
-def addstats():
-
-    form = StatsForm()
-    if form.validate_on_submit():
-        statsData = Stats(goals = form.goals.data,assists = form.assists.data,chances =form.chances.data,shots =form.shots.data,minutes =form.minutes.data,date =form.date.data, stat=form.player_id.data)
-        db.session.add(statsData)
-        db.session.commit()
-        return redirect(url_for('addstats'))
-
-    else:
-        print(form.errors)
-
-    return render_template('playerstats.html', title='Add Stats', form=form)
+#========== User Login  ================
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -84,14 +105,14 @@ def login():
                 return redirect(url_for('home'))
     return render_template('login.html', title='Login', form=form)
 
-
-
+#========= User Logout =================
 @app.route("/logout")
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('login'))
 
+#========= Manage User Account ===============
 @app.route('/account', methods=['GET', 'POST'])
 @login_required
 def account():
@@ -108,7 +129,7 @@ def account():
         form.email.data = current_user.email        
     return render_template('account.html', title='Account', form=form)
 
-
+#========= Delete User Account ================
 @app.route("/account/delete", methods=["GET", "POST"])
 @login_required
 def account_delete():

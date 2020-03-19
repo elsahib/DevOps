@@ -1,23 +1,22 @@
 {% extends "layout.html" %}
 {% block body_content %}
 <section id="intro">
-<p>Welcome to my Home Page!</p>
-
+<p>Welcome to my Project Page!</p>
+<br />
+<h2 >Our users are currently tracking these players</h2>
+<p>If you want to start Tracking your own players, <u>Register</u> or <u>Log in</u> from right top cornner</p>
 {% if posts %}
 
     {% for post in posts %}
-        <div>
+        <section>
             <h3>{{ post.player_name }}</h3>
-        <!-- <span>Added by <i>{{ post.author.first_name }} {{ post.author.last_name }}</i></span> -->
+            <p><b>Player Current Team:</b> {{ post.player_team }}</p>
+        </section>
         <br />
-        <span><b>Player Age:</b>  <i>{{ post.player_age }}</i></span> 
-        
-        <p><b>Player Current Team:</b> {{ post.player_team }}</p>
-        </div>
     {% endfor %}
 {% else %}
     <!-- display a message indicating that there are no posts --> 
-    <p>There are no post</p>
+    <p>No players are being tracked yet! </p>
 <!-- end the 'if' statement -->
 {% endif %}
 
