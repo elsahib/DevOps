@@ -1,7 +1,11 @@
 [Unit]
+<<<<<<< HEAD
 
 Description=My Players Tracker
 
+=======
+Description=My Players Tracker
+>>>>>>> master
 [Service]
 User=pythonadm
 WorkingDirectory=/opt/flask-app

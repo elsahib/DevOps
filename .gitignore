@@ -1,4 +1,12 @@
 /venv/*
 /__pycashe__/*
 *.pyc
+<<<<<<< HEAD
 /.vscode/*
+=======
+<<<<<<< HEAD
+.vscode/*
+=======
+/.vscode/*
+>>>>>>> trials
+>>>>>>> master

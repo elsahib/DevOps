@@ -4,7 +4,7 @@ from flask import render_template, redirect, url_for, request
 # import the app object from the ./application/__init__.py
 from application import app, db, bcrypt
 # import PostForm from application.forms
-from application.forms import StatsForm, RegistrationForm, LoginForm, PlayerForm
+from application.forms import StatsForm, RegistrationForm, LoginForm, PlayerForm, UpdateStatsForm, UpdatePlayersForm
 # import from Flask_login module
 from flask_login import login_user, current_user, logout_user, login_required
 # import further forms functionality
@@ -60,7 +60,25 @@ def addstats():
     return render_template('playerstats.html', title='Add Stats', form=form)
 
 #========= Editing Stats ====================
+<<<<<<< HEAD
 
+=======
+# @app.route('/editstats', methods=['GET', 'POST'])
+# @login_required
+# def account():
+#     form = UpdateStatsForm()
+#     if form.validate_on_submit():
+#         current_user.first_name = form.first_name.data
+#         current_user.last_name = form.last_name.data
+#         current_user.email = form.email.data
+#         db.session.commit()
+#         return redirect(url_for('home'))
+#     elif request.method == 'GET':
+#         form.first_name.data = current_user.first_name
+#         form.last_name.data = current_user.last_name        
+#         form.email.data = current_user.email        
+#     return render_template('editstats.html', title='Edit Stats', form=form)
+>>>>>>> master
 #========= Editing Players ==================
 
 #========= Removing a Player ================

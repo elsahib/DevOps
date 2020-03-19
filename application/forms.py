@@ -24,7 +24,7 @@ class PlayerForm(FlaskForm):
     player_team = StringField('Player Team',
         validators = [
             DataRequired(),
-            Length(min=2, max=30)
+            Length(min=2, max=100)
         ]
     )
     submit = SubmitField('Add Player')
@@ -107,7 +107,11 @@ class UpdatePlayersForm(FlaskForm):
 
 class UpdateStatsForm(FlaskForm):
 
+<<<<<<< HEAD
     player_name = StringField('Player Full Name',
+=======
+    player_name = StringField('Player Name',
+>>>>>>> master
         validators = [
             DataRequired(),
             Length(min=2, max=100)
@@ -151,11 +155,15 @@ class UpdateStatsForm(FlaskForm):
     
     submit = SubmitField('Update Stats')
 
+<<<<<<< HEAD
     def validate_email(self,email):
         if email.data != current_user.email:
             user = Users.query.filter_by(email=email.data).first()
             if user:
                 raise ValidationError('Email already in use')
+=======
+    
+>>>>>>> master
 
 #============= Users Management Forms =======================
 
