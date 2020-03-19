@@ -107,11 +107,7 @@ class UpdatePlayersForm(FlaskForm):
 
 class UpdateStatsForm(FlaskForm):
 
-<<<<<<< HEAD
-    player_name = StringField('Player Full Name',
-=======
     player_name = StringField('Player Name',
->>>>>>> master
         validators = [
             DataRequired(),
             Length(min=2, max=100)

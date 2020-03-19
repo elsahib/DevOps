@@ -60,9 +60,6 @@ def addstats():
     return render_template('playerstats.html', title='Add Stats', form=form)
 
 #========= Editing Stats ====================
-<<<<<<< HEAD
-
-=======
 # @app.route('/editstats', methods=['GET', 'POST'])
 # @login_required
 # def account():
@@ -78,7 +75,6 @@ def addstats():
 #         form.last_name.data = current_user.last_name        
 #         form.email.data = current_user.email        
 #     return render_template('editstats.html', title='Edit Stats', form=form)
->>>>>>> master
 #========= Editing Players ==================
 
 #========= Removing a Player ================
