@@ -3,8 +3,14 @@
 <section id="intro">
 <p>Welcome to my Project Page!</p>
 <br />
-<h2 >Our users are currently tracking these players</h2>
-<p>If you want to start Tracking your own players, <u>Register</u> or <u>Log in</u> from right top cornner</p>
+{% if current_user.is_authenticated %}
+        <h2 >Add or view your players from the right top cornner</h2>
+        <p>Players Tracked by all users</p>
+{% else %}
+
+        <h2 >Our users are currently tracking these players</h2>
+        <p>If you want to start Tracking your own players, <u>Register</u> or <u>Log in</u> from right top cornner</p>
+{% endif %}
 {% if posts %}
 
     {% for post in posts %}
