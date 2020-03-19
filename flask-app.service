@@ -1,5 +1,7 @@
 [Unit]
+
 Description=My Players Tracker
+
 [Service]
 User=pythonadm
 WorkingDirectory=/opt/flask-app

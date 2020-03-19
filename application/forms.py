@@ -24,7 +24,7 @@ class PlayerForm(FlaskForm):
     player_team = StringField('Player Team',
         validators = [
             DataRequired(),
-            Length(min=2, max=100)
+            Length(min=2, max=30)
         ]
     )
     submit = SubmitField('Add Player')
