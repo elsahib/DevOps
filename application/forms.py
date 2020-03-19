@@ -151,15 +151,7 @@ class UpdateStatsForm(FlaskForm):
     
     submit = SubmitField('Update Stats')
 
-<<<<<<< HEAD
-    def validate_email(self,email):
-        if email.data != current_user.email:
-            user = Users.query.filter_by(email=email.data).first()
-            if user:
-                raise ValidationError('Email already in use')
-=======
     
->>>>>>> master
 
 #============= Users Management Forms =======================
 
