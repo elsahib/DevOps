@@ -1,5 +1,9 @@
 [Unit]
+<<<<<<< HEAD
 Description=My Flask Blog
+=======
+Description=My Players Tracker
+>>>>>>> trials
 [Service]
 User=pythonadm
 WorkingDirectory=/opt/flask-app

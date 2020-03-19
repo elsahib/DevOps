@@ -1,4 +1,8 @@
 /venv/*
 /__pycashe__/*
 *.pyc
+<<<<<<< HEAD
 .vscode/*
+=======
+/.vscode/*
+>>>>>>> trials

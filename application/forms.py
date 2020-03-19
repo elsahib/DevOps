@@ -5,21 +5,7 @@ from application.models import Users, Players, Stats
 from flask_login import current_user
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 
-# class PostForm(FlaskForm):
-    
-#     title = StringField('Title',
-#         validators = [
-#             DataRequired(),
-#             Length(min=2, max=100)
-#         ]
-#     )
-#     content = TextAreaField('Content',
-#         validators = [
-#             DataRequired(),
-#             Length(min=2, max=1000)
-#         ]
-#     )
-#     submit = SubmitField('Post Content')
+
 class PlayerForm(FlaskForm):
     
     player_name = StringField('Player Full Name',
