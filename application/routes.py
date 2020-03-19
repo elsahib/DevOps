@@ -17,7 +17,7 @@ from application.forms import RegistrationForm, LoginForm, UpdateAccountForm
 @app.route('/')
 @app.route('/home')
 def home():
- playerData = Players.query.all()
+ playerData = db.session.query(Players).all()
  return render_template('home.html', title='Home', posts=playerData)
 
 #========== About Page ============
@@ -59,22 +59,16 @@ def addstats():
 
     return render_template('playerstats.html', title='Add Stats', form=form)
 
-#========= Editing Stats ====================
-# @app.route('/editstats', methods=['GET', 'POST'])
-# @login_required
-# def account():
-#     form = UpdateStatsForm()
-#     if form.validate_on_submit():
-#         current_user.first_name = form.first_name.data
-#         current_user.last_name = form.last_name.data
-#         current_user.email = form.email.data
-#         db.session.commit()
-#         return redirect(url_for('home'))
-#     elif request.method == 'GET':
-#         form.first_name.data = current_user.first_name
-#         form.last_name.data = current_user.last_name        
-#         form.email.data = current_user.email        
-#     return render_template('editstats.html', title='Edit Stats', form=form)
+#========= View All Data ====================
+@app.route('/view')
+@login_required
+def view():
+    statdata = db.session.query(Players, Stats).select_from(db.join(Stats, Players)).filter(Stats.player_id == Players.player_id)\
+        .filter(Players.id == current_user.id).all()
+    return render_template('view.html', title='Update Stats', stats=statdata)
+
+#========= Edit Records  ====================
+
 #========= Editing Players ==================
 
 #========= Removing a Player ================

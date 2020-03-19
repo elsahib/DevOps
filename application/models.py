@@ -39,7 +39,7 @@ class Stats(db.Model):
 
     
     def __repr__(self):
-        return ''.join(['UserID: ', str(self.stat_id), '\r\n', 'Email: ', self.player_id])
+        return ''.join(['Player: ', str(Players.player_name), '\r\n', 'Date: ', str(self.date)])
 
 class Users(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)

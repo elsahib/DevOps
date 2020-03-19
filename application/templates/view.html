@@ -1,0 +1,74 @@
+{% extends "layout.html" %} 
+{% block body_content %}
+<section id="intro">
+  <h1>Stats Page</h1>
+  <style type="text/css">
+    .tg {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .tg td {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 1px;
+      overflow: hidden;
+      word-break: normal;
+      border-color: black;
+    }
+
+    .tg th {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 1px;
+      overflow: hidden;
+      word-break: normal;
+      border-color: black;
+    }
+
+    .tg .tg-0lax {
+      text-align: left;
+      vertical-align: top
+    }
+  </style>
+{% if stats %}
+  <section>
+    <p>Below is everything you entered</p>
+    <table class="tg">
+      <tr>
+        <th class="tg-0lax">Name</th>
+        <th class="tg-0lax">Team</th>
+        <th class="tg-0lax">Age</th>
+        <th class="tg-0lax">Goals</th>
+        <th class="tg-0lax">Assits</th>
+        <th class="tg-0lax">Chances</th>
+        <th class="tg-0lax">Shots</th>
+        <th class="tg-0lax">Minutes</th>
+        <th class="tg-0lax">Date</th>
+      </tr>
+  {% for stat in stats %}                           
+      <tr>
+        <td class="tg-0lax">{{ stat.Players.player_name }}</td>
+        <td class="tg-0lax">{{ stat.Players.player_team }}</td>
+        <td class="tg-0lax">{{ stat.Players.player_age }}</td>
+        <td class="tg-0lax">{{ stat.Stats.goals }}</td>
+        <td class="tg-0lax">{{ stat.Stats.assists }}</td>
+        <td class="tg-0lax">{{ stat.Stats.chances }}</td>
+        <td class="tg-0lax">{{ stat.Stats.shots }}</td>
+        <td class="tg-0lax">{{ stat.Stats.minutes }}</td>
+        <td class="tg-0lax">{{ stat.Stats.date }}</td>
+      </tr>
+      <br />
+  {% endfor %}
+    </table>
+  </section>
+{% else %}
+  <p>You have no entries</p>
+{% endif %}
+{% endblock body_content %}
+</section>
