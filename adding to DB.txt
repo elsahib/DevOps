@@ -1,5 +1,0 @@
-from application import db
-from application.models import Posts
-post2 = Posts(first_name="Osman", last_name="Elsahib", title="Blog Post1", content="Further content for the second blog post")
-db.session.add(post2)
-db.session.commit()
