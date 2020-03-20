@@ -4,7 +4,7 @@ from flask import render_template, redirect, url_for, request
 # import the app object from the ./application/__init__.py
 from application import app, db, bcrypt
 # import PostForm from application.forms
-from application.forms import StatsForm, RegistrationForm, LoginForm, PlayerForm, UpdateForm
+from application.forms import StatsForm, RegistrationForm, LoginForm, PlayerForm, UpdateForm, UpdatePlayer
 # import from Flask_login module
 from flask_login import login_user, current_user, logout_user, login_required
 # import further forms functionality
@@ -25,8 +25,8 @@ def home():
 def about():
     return render_template('about.html', title='About')
 
-########### Players & Stats Management ########
-#========== Adding a Player ===================
+########### Players & Stats Management ######
+#========== Adding a Player =================
 @app.route('/addplayer', methods=['GET', 'POST'])
 @login_required 
 def addplayer():
@@ -59,15 +59,15 @@ def addstats():
 
     return render_template('playerstats.html', title='Add Stats', form=form)
 
-#========= View All Data ====================
+#========= View Stats =======================
 @app.route('/view')
 @login_required
 def view():
     statdata = db.session.query(Players, Stats).select_from(db.join(Stats, Players)).filter(Stats.player_id == Players.player_id)\
         .filter(Players.id == current_user.id).all()
-    return render_template('view.html', title='Update Stats', stats=statdata)
+    return render_template('view.html', title='View Stats', stats=statdata)
 
-#========= Edit Stats  ====================
+#========= Edit Stats  ======================
 @app.route('/editstats/<player_id>', methods=['GET', 'POST'])
 @login_required
 def editstats(player_id):
@@ -92,8 +92,7 @@ def editstats(player_id):
         form.date.data = current_record.Stats.date
     return render_template('editstats.html', title='Edit Stats Data', form=form, current= current_record)
 
-#========= remove stats ================
-
+#========= remove stats =====================
 @app.route('/deletestats/<stat_id>')
 @login_required
 def deletestats(stat_id):
@@ -101,7 +100,45 @@ def deletestats(stat_id):
     db.session.commit()
     return redirect(url_for('view'))
 
-########### User Management #################
+#========= View players =======================
+@app.route('/vplayers')
+@login_required
+def vplayers():
+    playerdata = db.session.query(Players).select_from(Players).filter_by(id = current_user.id).all()
+    return render_template('vplayers.html', title='View Players', players=playerdata)
+
+#========= Edit players  ======================
+@app.route('/editplayer/<player_id>', methods=['GET', 'POST'])
+@login_required
+def editplayer(player_id):
+    current_record = db.session.query(Players).select_from(Players).filter(player_id == player_id).first()
+    form = UpdatePlayer()
+    if form.validate_on_submit():
+        current_record.player_name = form.player_name.data
+        current_record.player_age = form.player_age.data
+        current_record.player_team = form.player_team.data
+        db.session.commit()
+        return redirect(url_for('vplayers'))
+    elif request.method=='GET':
+        form.player_name.data = current_record.player_name
+        form.player_age.data = current_record.player_age
+        form.player_team.data = current_record.player_team
+
+    return render_template('editplayer.html', title='Edit Player Data', form=form )
+
+#========= remove players =====================
+@app.route('/deleteplayer/<player_id>')
+@login_required
+def deleteplayer(player_id):
+    stats = db.session.query(Stats).select_from(Stats).filter_by( player_id = player_id).all()
+    for stat in stats:
+        db.session.delete(stat)
+    db.session.query(Players).filter_by(player_id = player_id).delete(synchronize_session=False)
+    db.session.commit()
+    return redirect(url_for('vplayers'))
+
+
+########### User Management ##################
 #========== User Registration Page ===========
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -119,8 +156,7 @@ def register():
         return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
 
-#========== User Login  ================
-
+#========== User Login  ======================
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -137,7 +173,7 @@ def login():
                 return redirect(url_for('home'))
     return render_template('login.html', title='Login', form=form)
 
-#========= User Logout =================
+#========= User Logout =======================
 @app.route("/logout")
 @login_required
 def logout():
@@ -167,12 +203,12 @@ def account():
 def account_delete():
     user = current_user.id
     account = Users.query.filter_by(id=user).first()
-    player_count = db.session.query(Players).count()
-    for i in range(player_count) :
-        player = Players.query.filter_by(id=user).first()
-        stat_counter = db.session.query(Stats).filter(player_id=player.player_id).count()     
-        for j in range(stat_counter) :
-            db.session.delete(Stats.query.filter_by(player_id=player.player_id).first())
+    players = Players.query.filter_by(id=user)
+    for player in players :
+        stats = db.session.query(Stats).select_from(Stats).filter_by( player_id = player.player_id).all()
+        # stat_counter = db.session.query(Stats).filter(player_id=player.player_id).count()     
+        for stat in stats :
+            db.session.delete(stat)
         db.session.delete(player)
     logout_user()
     db.session.delete(account)

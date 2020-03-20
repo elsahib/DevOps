@@ -5,8 +5,8 @@ from application.models import Users, Players, Stats
 from flask_login import current_user
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 
-#============= Players Management Forms =======================
-#================== Add New Player Form =======================
+#============= Players Management Forms =====================
+#================== Add New Player Form =====================
 class PlayerForm(FlaskForm):
     
     player_name = StringField('Player Full Name',
@@ -29,7 +29,7 @@ class PlayerForm(FlaskForm):
     )
     submit = SubmitField('Add Player')
 
-#============= Add Stats to a Player Form =======================
+#============= Add Stats to a Player Form ===================
 class StatsForm(FlaskForm):
    
     player_id = QuerySelectField(
@@ -75,11 +75,8 @@ class StatsForm(FlaskForm):
     
     submit = SubmitField('Add Stats')
 
-#============= Update Data Form =======================
-
+#============= Update Stats Form ============================
 class UpdateForm(FlaskForm):
-
-
     goals = StringField('Goals',
         validators = [
             DataRequired(),
@@ -117,8 +114,32 @@ class UpdateForm(FlaskForm):
     
     submit = SubmitField('Update Stats')
 
-#============= Users Management Forms =======================
+#============= Update Players Form ==========================
+class UpdatePlayer(FlaskForm):
 
+    player_name = StringField('Player Full Name',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=100)
+        ]
+    )
+    player_age = StringField('Player Age',
+        validators = [
+            DataRequired(),
+            Length(min=1, max=3)
+        ]
+    )
+    player_team = StringField('Player Team',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=100)
+        ]
+    )
+    submit = SubmitField('Update Player')
+
+
+#============= Users Management Forms =======================
+#============= Registeration Form ===========================
 class RegistrationForm(FlaskForm):
     first_name = StringField('First Name',
         validators = [
@@ -157,7 +178,7 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('Email already in use')
 
-
+#============= Login Form ===================================
 class LoginForm(FlaskForm):
     email = StringField('Email',
         validators=[
@@ -175,6 +196,7 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
+#============= Update Account Form ==========================
 class UpdateAccountForm(FlaskForm):
     first_name = StringField('First Name',
         validators=[

@@ -1,0 +1,67 @@
+{% extends "layout.html" %} 
+{% block body_content %}
+<section id="intro">
+  <h1>Your Players</h1>
+  <style type="text/css">
+    .tg {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .tg td {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 1px;
+      overflow: hidden;
+      word-break: normal;
+      border-color: black;
+    }
+
+    .tg th {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 1px;
+      overflow: hidden;
+      word-break: normal;
+      border-color: black;
+    }
+
+    .tg .tg-0lax {
+      text-align: left;
+      vertical-align: top
+    }
+  </style>
+{% if players %}
+  <section>
+    <p>Below are your players </p>
+    <table class="tg">
+      <tr>
+        <th class="tg-0lax">Name</th>
+        <th class="tg-0lax">Team</th>
+        <th class="tg-0lax">Age</th>
+        <th class="tg-0lax">Delete Stats</th>
+        <th class="tg-0lax">Edit Entry</th>
+      </tr>
+  {% for player in players %}                           
+      <tr>
+        <td class="tg-0lax">{{ player.player_name }}</td>
+        <td class="tg-0lax">{{ player.player_team }}</td>
+        <td class="tg-0lax">{{ player.player_age }}</td>
+        <td class="tg-0lax"><a href='/deleteplayer/{{ player.player_id }}'>Delete Player</a></td>
+        <td class="tg-0lax"><a href='/editplayer/{{ player.player_id }}'>Edit Player</a></td>
+        
+      </tr>
+      <br />
+  {% endfor %}
+    </table>
+  </section>
+{% else %}
+  <p>You have no entries</p>
+{% endif %}
+{% endblock body_content %}
+</section>
