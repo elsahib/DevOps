@@ -111,7 +111,7 @@ def vplayers():
 @app.route('/editplayer/<player_id>', methods=['GET', 'POST'])
 @login_required
 def editplayer(player_id):
-    current_record = db.session.query(Players).select_from(Players).filter(player_id == player_id).first()
+    current_record = db.session.query(Players).select_from(Players).filter(Players.player_id == player_id).first()
     form = UpdatePlayer()
     if form.validate_on_submit():
         current_record.player_name = form.player_name.data
@@ -205,8 +205,7 @@ def account_delete():
     account = Users.query.filter_by(id=user).first()
     players = Players.query.filter_by(id=user)
     for player in players :
-        stats = db.session.query(Stats).select_from(Stats).filter_by( player_id = player.player_id).all()
-        # stat_counter = db.session.query(Stats).filter(player_id=player.player_id).count()     
+        stats = db.session.query(Stats).select_from(Stats).filter_by( player_id = player.player_id).all()  
         for stat in stats :
             db.session.delete(stat)
         db.session.delete(player)
@@ -214,20 +213,3 @@ def account_delete():
     db.session.delete(account)
     db.session.commit()
     return redirect(url_for('register'))
-    # stats = db.session.query(Stats).select_from(Stats).filter(Stats.player_id == players.player_id)
-    # stats = 
-
-# #====== last version on github =========================
-# @app.route("/account/delete", methods=["GET", "POST"])
-# @login_required
-# def account_delete():
-#     user = current_user.id
-#     account = Users.query.filter_by(id=user).first()
-#     players = Players.query.filter_by(player_id=user)
-#     posts = Stats.query.filter_by(player_id=user)
-#     for post in posts :
-#         db.session.delete(post)
-#     logout_user()
-#     db.session.delete(account)
-#     db.session.commit()
-#     return redirect(url_for('register'))
