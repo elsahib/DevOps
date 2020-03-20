@@ -18,6 +18,7 @@
                     {% endif %}
                 </div>
                 <br>
+                <div>
                 {{ form.password.label }}
                     {{ form.password }}
                     {% if form.password.errors %}
@@ -27,12 +28,14 @@
                         {% endfor %}
                     </div>
                     {% endif %}
-                
+                </div>
                 <!--Password and Check Password fields-->
-
                 <br>
+                <div>
+                
                 {{ form.remember.label }}
                 {{ form.remember }}
+                </div>
                 <br>
                 <div class='form_group'>
                     {{ form.submit }}
