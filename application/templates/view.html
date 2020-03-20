@@ -1,7 +1,7 @@
 {% extends "layout.html" %} 
 {% block body_content %}
 <section id="intro">
-  <h1>Stats Page</h1>
+  <h1>Your Data Page</h1>
   <style type="text/css">
     .tg {
       border-collapse: collapse;
@@ -50,6 +50,8 @@
         <th class="tg-0lax">Shots</th>
         <th class="tg-0lax">Minutes</th>
         <th class="tg-0lax">Date</th>
+        <th class="tg-0lax">Delete Stats</th>
+        <th class="tg-0lax">Edit Entry</th>
       </tr>
   {% for stat in stats %}                           
       <tr>
@@ -62,6 +64,9 @@
         <td class="tg-0lax">{{ stat.Stats.shots }}</td>
         <td class="tg-0lax">{{ stat.Stats.minutes }}</td>
         <td class="tg-0lax">{{ stat.Stats.date }}</td>
+        <td class="tg-0lax"><a href='/deletestats/{{ stat.Stats.stat_id }}'>Delete Stat</a></td>
+        <td class="tg-0lax"><a href='/editstats/{{ stat.Stats.player_id }}'>Edit Stats</a></td>
+        
       </tr>
       <br />
   {% endfor %}

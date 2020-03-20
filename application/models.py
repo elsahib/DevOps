@@ -24,10 +24,7 @@ class Players(db.Model):
             ])
 
 class Stats(db.Model):
-    __tablename__ = 'stats'
-    __table_args__ = (
-        db.UniqueConstraint('player_id', 'date', name='unique_player_data'),
-    )
+
     stat_id = db.Column(db.Integer, primary_key=True)
     player_id = db.Column(db.Integer,db.ForeignKey('players.player_id'), nullable=False)
     goals = db.Column(db.Integer, nullable=False, default=0)

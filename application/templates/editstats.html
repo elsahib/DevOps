@@ -1,22 +1,12 @@
-{% extends "layout.html" %} {% block body_content %}
+{% extends "layout.html" %} 
+{% block body_content %}
 <section id="intro">
-  <h1>Stats Page</h1>
-  <p>Add Stats to an exsiting Player</p>
+  <h1>Edit Stats</h1>
+  <p>Edit Stats for : <b>{{ current.Players.player_name }}</b></p>
   <div class="form">
     <form method="POST" action="">
       {{ form.hidden_tag() }}
-      <div class="form-group">
-        {{ form.player_id.label }} 
-        {{ form.player_id }} 
-        {% if form.goals.errors %}
-        <div class="error">
-          {% for error in form.player_id.errors %}
-          <span>{{ error }}</span>
-          {% endfor %}
-        </div>
-        {% endif %}
-      </div>
-      <br />
+
       <div class="form-group">
         {{ form.goals.label }} 
         {{ form.goals }} 
@@ -53,7 +43,6 @@
         {% endif %}
       </div>
       <br />
-      <br />
       <div class="form_group">
         {{ form.shots.label }} 
         {{ form.shots }} 
@@ -66,7 +55,6 @@
         {% endif %}
       </div>
       <br />
-      <br />
       <div class="form_group">
         {{ form.minutes.label }} 
         {{ form.minutes }} 
@@ -78,7 +66,6 @@
         </div>
         {% endif %}
       </div>
-      <br />
       <br />
       <div class="form_group">
         {{ form.date.label }} 
@@ -98,5 +85,6 @@
       </div>
     </form>
   </div>
-  {% endblock body_content %}
-</section>
+  </section>
+{% endblock body_content %}
+

@@ -75,45 +75,11 @@ class StatsForm(FlaskForm):
     
     submit = SubmitField('Add Stats')
 
+#============= Update Data Form =======================
 
-#============= Update Players Form =======================
-
-class UpdatePlayersForm(FlaskForm):
-    first_name = StringField('First Name',
-        validators=[
-            DataRequired(),
-            Length(min=4, max=30)
-        ])
-    last_name = StringField('Last Name',
-        validators=[
-            DataRequired(),
-            Length(min=4, max=30)
-        ])
-    email = StringField('Email',
-        validators=[
-            DataRequired(),
-            Email()
-        ])
-    submit = SubmitField('Update')
-
-    def validate_email(self,email):
-        if email.data != current_user.email:
-            user = Users.query.filter_by(email=email.data).first()
-            if user:
-                raise ValidationError('Email already in use')
+class UpdateForm(FlaskForm):
 
 
-#============= Update Stats Form =======================
-
-class UpdateStatsForm(FlaskForm):
-
-    player_name = StringField('Player Name',
-        validators = [
-            DataRequired(),
-            Length(min=2, max=100)
-        ]
-    )
-    
     goals = StringField('Goals',
         validators = [
             DataRequired(),
@@ -145,13 +111,11 @@ class UpdateStatsForm(FlaskForm):
             Length(min=1, max=3)
         ]
     )
-    date = DateField('Enter Date(dd-mm-yy)',
+    date = DateField('Update Date(dd-mm-yy)',
             format="%d-%m-%Y")
         
     
     submit = SubmitField('Update Stats')
-
-    
 
 #============= Users Management Forms =======================
 
@@ -215,12 +179,12 @@ class UpdateAccountForm(FlaskForm):
     first_name = StringField('First Name',
         validators=[
             DataRequired(),
-            Length(min=4, max=30)
+            Length(min=2, max=30)
         ])
     last_name = StringField('Last Name',
         validators=[
             DataRequired(),
-            Length(min=4, max=30)
+            Length(min=2, max=30)
         ])
     email = StringField('Email',
         validators=[
