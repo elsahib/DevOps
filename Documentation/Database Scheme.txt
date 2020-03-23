@@ -1,5 +1,4 @@
-mysql> describe players
-    -> ;
+players
 +-------------+-------------+------+-----+---------+----------------+
 | Field       | Type        | Null | Key | Default | Extra          |
 +-------------+-------------+------+-----+---------+----------------+
@@ -9,9 +8,8 @@ mysql> describe players
 | player_team | varchar(30) | NO   |     | NULL    |                |
 | id          | int(11)     | NO   | MUL | NULL    |                |
 +-------------+-------------+------+-----+---------+----------------+
-5 rows in set (0.01 sec)
 
-mysql> describe users;
+users
 +------------+--------------+------+-----+---------+----------------+
 | Field      | Type         | Null | Key | Default | Extra          |
 +------------+--------------+------+-----+---------+----------------+
@@ -21,9 +19,8 @@ mysql> describe users;
 | email      | varchar(150) | NO   | UNI | NULL    |                |
 | password   | varchar(500) | NO   |     | NULL    |                |
 +------------+--------------+------+-----+---------+----------------+
-5 rows in set (0.01 sec)
 
-mysql> describe stats;
+stats
 +-----------+----------+------+-----+---------+----------------+
 | Field     | Type     | Null | Key | Default | Extra          |
 +-----------+----------+------+-----+---------+----------------+
@@ -36,6 +33,6 @@ mysql> describe stats;
 | minutes   | int(11)  | NO   |     | NULL    |                |
 | date      | datetime | NO   |     | NULL    |                |
 +-----------+----------+------+-----+---------+----------------+
-8 rows in set (0.01 sec)
+
 
 mysql>
