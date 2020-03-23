@@ -3,26 +3,17 @@ A solo project to fulfill the DevOps Fundamentals Project Specifications
 
 ## Index
 [Brief](#brief)
-   * [Solution](#solution)
-
+[Solution](#solution)
 [Risk Assessment](#risks)
-   * [Risk Sssessment Table](#risks)
-   * [Explanations](#risks_expl)
-
-[Architecture]
-   * [Entity Relationship Diagrams](#erd)
-
-[Kanban!](#user_sotry)
-   * [Use case diagram](#use_case)
-
+[Kanban!](#kan)
+[Entity Relationship Diagrams](#erd)
 [Testing](#testing)
-
-
-[Deployment](#depl)
-   * [Technologies Used](#tech)
-
-
+[Deployment](#deployment)
 [Front End Design](#FE)
+[Relevent Information and Links](#rel)
+
+
+
 
 <a name="brief"></a>
 ## Brief 
@@ -44,7 +35,7 @@ To workout the solution utilising the supporting tools, technologies and methodo
 * Deploy the application
 
 Let's cover as much as possible from above
-
+<a name="risks"></a>
 ### Risk Assessment
 | Risks                            | Likelihood    | Impact       | 
 | -------------------------------- |:-------------:| :-----------:| 
@@ -66,7 +57,7 @@ This risk was mitigated by using the best practice of exporting sensitive inform
 ##### Running out of GCP free Balance
 This one was mitigated by using micro VM instances as they don’t cost much
 
-
+<a name="kan"></a>
 ### Kanban Board
 To create a back-log for the application and to also keep track of my progress while developing the application, I used Trello Board. It contained all the user stories and my To Do list. It gets updated regularly.
 
@@ -89,21 +80,28 @@ To create a back-log for the application and to also keep track of my progress w
 
 <img src="Documentation/DataBaseScheme.png" alt="Database Scheme" width="80%" height="70%"/>
 
-
+<a name="testing"></a>
 ### Testing
 The Testing for the application was done using pytest in conjunction with selenium module, the test only covered the pages that doesn't require login using the backend test. but using seleinum a test to the login protected was preformed successfully although it doesn't show on the coverage report.
 <img src="Documentation/CoverageReport.png" alt="Coverage Report" width="80%" height="70%"/>
 
-
+<a name="deployment"></a>
 ### Deployment 
 
-
+<a name="rel"></a>
 ### Relevant information and links
 
-Application link : http://35.246.46.9:8080/
-Jenkins link: http://35.189.64.220:8080/
-Trello Board Link: https://trello.com/b/MYYfqs6z/soccer-players-tracker
+* Application link : http://35.246.46.9:8080/
+* Jenkins link: http://35.189.64.220:8080/
+* Trello Board Link: https://trello.com/b/MYYfqs6z/soccer-players-tracker
 
+To get this app running locally on an ubuntu machine below are extra requirements which are not mentioned in the requirements.txt.
+Python 3
+Virtual Eviroment
+A secret Key exported 
+MySQL Server 5.7
+
+Setup:
 Web Application Screenshots:
 
 ### Author
@@ -115,12 +113,6 @@ My deepest regards and appreciation goes to the QA Academy team, and even more s
 
 
 
-To get this app running locally on an ubuntu below are the requirements are not mentioned in the requirements.txt:
-Python 3
-Virtual Eviroment
-A secret Key exported 
-MySQL Server 5.7
 
-Setup:
 
 
