@@ -54,16 +54,16 @@ Let's cover as musch as possible from above
 | Exposure of sensitive information  | Low     |    High | 
 | Running out of GCP credit        |   Low     |    High       | 
 
-### Wrong interpretation of client needs
+##### Wrong interpretation of client needs
 This risk was mitigated by having regular meetings with the client throughout the development cycle to ensure that the product is meeting the client expectations.
-### Lack of Technical knowledge
+##### Lack of Technical knowledge
 This risk was mitigated by constantly reviewing each step and refereing to documentations and best practices provided in the training and from other sources
-### Automation causing issues
+##### Automation causing issues
 This risk was mitigated by testing the automation process with a simple ‘Hello World’ application to ensure that the CI Pipeline is functional, Also keeping the server on to avoid having the IP address change
-### Exposure of sensitive information
+##### Exposure of sensitive information
 This risk was mitigated by using the best practice of exporting sensitive information as variables for the each application administration session only
  
-### Running out of GCP free Balance
+##### Running out of GCP free Balance
 This one was mitigated by using micro VM instances as they don’t cost much
 
 
@@ -81,7 +81,7 @@ Images
 #### Delivered ERD solution
 
 
-<img src="Documentation/Final_ERD.jpg" alt="Initial ERD" width="60%" height="60%"/>
+<img src="Documentation/Final_ERD.jpg" alt="Initial ERD" width="80%" height="70%"/>
 
 
 The database structure and tables needs to be defined and the relationship between each table should be clear
