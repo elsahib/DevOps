@@ -12,7 +12,7 @@ A solo project to fulfill the DevOps Fundamentals Project Specifications
 [Architecture]
    * [Entity Relationship Diagrams](#erd)
 
-[User sotry](#user_sotry)
+[Kanban!](#user_sotry)
    * [Use case diagram](#use_case)
 
 [Testing](#testing)
@@ -67,17 +67,23 @@ This risk was mitigated by using the best practice of exporting sensitive inform
 This one was mitigated by using micro VM instances as they don’t cost much
 
 
-Kanban Method:
-Trello Board 
+Kanban Board
+To create a back-log for the application and to also keep track of my progress while developing the application, I used Trello Board. It contained all the user stories and my To Do list. It gets updated regularly.
+
 Images
 
 <a name="erd"></a>
 ### Entity Relationship Diagrams
-#### Initial plan
+#### Initial ERD plan
 
-<img src="/Documentation/ERD_Initial_Plan.png" alt="Initial ERD" width="60%" height="60%"/>
-ERD plan:
-Images 
+<img src="Documentation/Initial_ERD_plan.jpg" alt="Initial ERD" width="60%" height="60%"/>
+
+#### Delivered ERD solution
+
+
+<img src="Documentation/Final_ERD.jpg" alt="Initial ERD" width="60%" height="60%"/>
+
+
 The database structure and tables needs to be defined and the relationship between each table should be clear
 
 Testing:
