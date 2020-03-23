@@ -5,7 +5,7 @@ A solo project to fulfill the DevOps Fundamentals Project Specifications
 [Brief](#brief)
    * [Solution](#solution)
 
-[Architecture](#architecture)
+[Architecture]
    * [Entity Relationship Diagrams](#erd)
 
 [Risk Assessment](#risks)
@@ -64,6 +64,12 @@ Running out of GCP free Balance.
 Kanban Method:
 Trello Board 
 Images
+
+<a name="erd"></a>
+### Entity Relationship Diagrams
+#### Initial plan
+
+<img src="/Documentation/ERD_Initial_Plan.png" alt="Initial ERD" width="60%" height="60%"/>
 ERD plan:
 Images 
 The database structure and tables needs to be defined and the relationship between each table should be clear
