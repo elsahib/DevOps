@@ -61,7 +61,7 @@ This one was mitigated by using micro VM instances as they don’t cost much
 ## Kanban Board
 To create a back-log for the application and to also keep track of my progress while developing the application, I used Trello Board. It contained all the user stories and my To Do list. It gets updated regularly.
 
-<img src="Documentation/TrelloBoard.png" alt="Trello Board" width="80%" height="90%"/>
+<img src="Documentation/TrelloBoard.png" alt="Trello Board" />
 
 
 <a name="erd"></a>
@@ -83,7 +83,7 @@ To create a back-log for the application and to also keep track of my progress w
 <a name="testing"></a>
 ## Testing
 The Testing for the application was done using pytest in conjunction with selenium module, the test only covered the pages that doesn't require login using the backend test. but using seleinum a test to the login protected was preformed successfully although it doesn't show on the coverage report.
-<img src="Documentation/CoverageReport.png" alt="Coverage Report" width="80%" height="70%"/>
+<img src="Documentation/CoverageReport.png" alt="Coverage Report" width="100%" height="100%"/>
 
 <a name="deployment"></a>
 ## Deployment 
