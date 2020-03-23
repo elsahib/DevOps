@@ -31,17 +31,17 @@ He wanted the freedom to add or remove players as needed and also the freedom to
 <a name= 'solution'></a>
 ### Solution
 
-To workout the solution utilising the supporting tools, technologies and methodologies covered during the training in the academy, I’ve decided the following
+To workout the solution utilising the supporting tools, technologies and methodologies covered during the training in the academy, I’ve decided the following:
 
-    * Adopt Agile methods to manage my project
-    * Perform risk assessment using the outline covered during the training
-    * Implement kanban method using Trello
-    * Build database ERD using Draw.io
-    * Create Git repository to be my VCS
-    * Use MySQL server, HTML5, CSS3 , Python, Flask and a few more python modules  to build and test the application (refer to the requirements.txt for more details )
-    * Host the Application ( MySQL Database Server, Linux Web Application Server and Linux server hosting the automated deployment server for continuous integration ‘Jenkins’ ) on Google Cloud Platform ( free tier )
-    * Test the application
-    * Deploy the application
+* Adopt Agile methods to manage my project
+* Perform risk assessment using the outline covered during the training
+* Implement kanban method using Trello
+* Build database ERD using Draw.io
+* Create Git repository to be my VCS
+* Use MySQL server, HTML5, CSS3 , Python, Flask and a few more python modules  to build and test the application (refer to the requirements.txt for more details )
+* Host the Application ( MySQL Database Server, Linux Web Application Server and Linux server hosting the automated deployment server for continuous integration ‘Jenkins’ ) on Google Cloud Platform ( free tier )
+* Test the application
+* Deploy the application
 
 Detailed Breakdown for each point from above
 
