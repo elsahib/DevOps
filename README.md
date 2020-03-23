@@ -36,7 +36,7 @@ To workout the solution utilising the supporting tools, technologies and methodo
 
 Let's cover as much as possible from above
 <a name="risks"></a>
-### Risk Assessment
+## Risk Assessment
 | Risks                            | Likelihood    | Impact       | 
 | -------------------------------- |:-------------:| :-----------:| 
 | Wrong interpretation of client needs | Low           | High         | 
@@ -58,14 +58,14 @@ This risk was mitigated by using the best practice of exporting sensitive inform
 This one was mitigated by using micro VM instances as they don’t cost much
 
 <a name="kan"></a>
-### Kanban Board
+## Kanban Board
 To create a back-log for the application and to also keep track of my progress while developing the application, I used Trello Board. It contained all the user stories and my To Do list. It gets updated regularly.
 
 <img src="Documentation/TrelloBoard.png" alt="Trello Board" width="60%" height="60%"/>
 
 
 <a name="erd"></a>
-### Entity Relationship Diagrams
+## Entity Relationship Diagrams
 #### Initial ERD plan
 
 <img src="Documentation/Initial_ERD_plan.jpg" alt="Initial ERD" width="60%" height="60%"/>
@@ -81,15 +81,15 @@ To create a back-log for the application and to also keep track of my progress w
 <img src="Documentation/DataBaseScheme.png" alt="Database Scheme" width="80%" height="70%"/>
 
 <a name="testing"></a>
-### Testing
+## Testing
 The Testing for the application was done using pytest in conjunction with selenium module, the test only covered the pages that doesn't require login using the backend test. but using seleinum a test to the login protected was preformed successfully although it doesn't show on the coverage report.
 <img src="Documentation/CoverageReport.png" alt="Coverage Report" width="80%" height="70%"/>
 
 <a name="deployment"></a>
-### Deployment 
+## Deployment 
 
 <a name="rel"></a>
-### Relevant information and links
+## Relevant information and links
 
 * Application link : http://35.246.46.9:8080/
 * Jenkins link: http://35.189.64.220:8080/
