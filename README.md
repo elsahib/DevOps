@@ -61,24 +61,20 @@ This one was mitigated by using micro VM instances as they don’t cost much
 ## Kanban Board
 To create a back-log for the application and to also keep track of my progress while developing the application, I used Trello Board. It contained all the user stories and my To Do list. It gets updated regularly.
 
-<img src="Documentation/TrelloBoard.png" alt="Trello Board" />
+<img src="Documentation/TrelloBoard.png" alt="Trello Board" width="80%" height="80%"/>
 
 
 <a name="erd"></a>
 ## Entity Relationship Diagrams
 #### Initial ERD plan
 
-<img src="Documentation/Initial_ERD_plan.jpg" alt="Initial ERD" width="80%" height="80%"/>
+<img src="Documentation/Initial_ERD_plan.jpg" alt="Initial ERD" width="100%" height="80%"/>
 
 #### Delivered ERD solution
 
 
 <img src="Documentation/Final_ERD.jpg" alt="Final ERD" width="80%" height="70%"/>
 
-
-#### Database Scheme
-
-<img src="Documentation/DataBaseScheme.png" alt="Database Scheme" width="80%" height="70%"/>
 
 <a name="testing"></a>
 ## Testing
@@ -106,7 +102,20 @@ To get this app running locally on an ubuntu machine below are extra things to c
 * Run the Application.
 
 
-## Web Application Screenshots:
+## Web Application Screenshots
+<img src="Documentation/app1.png" alt="Coverage Report" width="100%" height="100%"/>
+
+### Home Page without Log in
+<img src="Documentation/app1.png" alt="Coverage Report" width="100%" height="100%"/>
+
+### Home Page for a Logged in user
+<img src="Documentation/app2.png" alt="Coverage Report" width="100%" height="100%"/>
+
+### Stats View Page
+<img src="Documentation/app3.png" alt="Coverage Report" width="100%" height="100%"/>
+
+### Players View Page
+<img src="Documentation/app4.png" alt="Coverage Report" width="100%" height="100%"/>
 
 ### Author
 Osman Elsahib
