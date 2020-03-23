@@ -38,7 +38,7 @@ Let's cover as much as possible from above
 <a name="risks"></a>
 ## Risk Assessment
 | Risks                            | Likelihood    | Impact       | 
-| -------------------------------- |:-------------:| :-----------:| 
+| :------------------------------- |:-------------:| -----------:| 
 | Wrong interpretation of client needs | Low           | High         | 
 | Lack of Technical knowledge      | Medium        |   Medium     | 
 | Automation causing issues        | Low            |  High        | 
@@ -61,14 +61,14 @@ This one was mitigated by using micro VM instances as they don’t cost much
 ## Kanban Board
 To create a back-log for the application and to also keep track of my progress while developing the application, I used Trello Board. It contained all the user stories and my To Do list. It gets updated regularly.
 
-<img src="Documentation/TrelloBoard.png" alt="Trello Board" width="60%" height="60%"/>
+<img src="Documentation/TrelloBoard.png" alt="Trello Board" width="80%" height="90%"/>
 
 
 <a name="erd"></a>
 ## Entity Relationship Diagrams
 #### Initial ERD plan
 
-<img src="Documentation/Initial_ERD_plan.jpg" alt="Initial ERD" width="60%" height="60%"/>
+<img src="Documentation/Initial_ERD_plan.jpg" alt="Initial ERD" width="80%" height="80%"/>
 
 #### Delivered ERD solution
 
@@ -95,14 +95,18 @@ The Testing for the application was done using pytest in conjunction with seleni
 * Jenkins link: http://35.189.64.220:8080/
 * Trello Board Link: https://trello.com/b/MYYfqs6z/soccer-players-tracker
 
-To get this app running locally on an ubuntu machine below are extra requirements which are not mentioned in the requirements.txt.
-Python 3
-Virtual Eviroment
-A secret Key exported 
-MySQL Server 5.7
+To get this app running locally on an ubuntu machine below are extra things to consider.
 
-Setup:
-Web Application Screenshots:
+* Install Python 3.
+* Install Python3-venv.
+* A secret Key exported to your termial session.
+* MySQL Server 5.7 containing an empty databse.
+* A Database URI exported to your termial session.
+* Install Requirements.txt in a virtual enviroment and activate it.
+* Run the Application.
+
+
+## Web Application Screenshots:
 
 ### Author
 Osman Elsahib
