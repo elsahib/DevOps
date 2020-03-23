@@ -72,7 +72,7 @@ To create a back-log for the application and to also keep track of my progress w
 #### Delivered ERD solution
 
 
-<img src="Documentation/Final_ERD.jpg" alt="Final ERD" width="80%" height="70%"/>
+<img src="Documentation/Final_ERD.jpg" alt="Final ERD" width="90%" height="90%"/>
 
 
 <a name="testing"></a>
@@ -82,6 +82,9 @@ The Testing for the application was done using pytest in conjunction with seleni
 
 <a name="deployment"></a>
 ## Deployment 
+Application deployment is automated using a webhook from github to the CI server Jenkins. Whenever a commit is made to the master branch, the CI server is notified and it will grap a copy of the changes build and deploy it to the application server, it can be better visualised looking at the diagram below.
+
+<img src="Documentation/CI_Pipeline.png" alt="CI Pipeline" width="100%" height="100%"/>
 
 <a name="rel"></a>
 ## Relevant information and links
