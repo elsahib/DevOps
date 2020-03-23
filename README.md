@@ -85,32 +85,40 @@ To create a back-log for the application and to also keep track of my progress w
 <img src="Documentation/Final_ERD.jpg" alt="Final ERD" width="80%" height="70%"/>
 
 
-The database structure and tables needs to be defined and the relationship between each table should be clear
+#### Database Scheme
 
-Testing:
+<img src="Documentation/DataBaseScheme.png" alt="Database Scheme" width="80%" height="70%"/>
+
+
+### Testing
 The Testing for the application was done using pytest in conjunction with selenium module, the test covered  
-Deployment :
+
+### Deployment 
 
 
-Relevant information and links:
+### Relevant information and links
+
 Application link : http://35.246.46.9:8080/
 Jenkins link: http://35.189.64.220:8080/
 Trello Board Link: https://trello.com/b/MYYfqs6z/soccer-players-tracker
 
 Web Application Screenshots:
 
-Author:
+### Author
 Osman Elsahib
-Acknowledgements :
+### Acknowledgements
 My deepest regards and appreciation goes to the QA Academy team, and even more special regards goes to Luke and Ben for their wonderful delivery of the training materials and their non-stop support.
 
 
 
 
 
-to get this app running locally:
+To get this app running locally on an ubuntu below are the requirements are not mentioned in the requirements.txt:
+Python 3
+Virtual Eviroment
+A secret Key exported 
+MySQL Server 5.7
 
-requirements:
 Setup:
 
 
