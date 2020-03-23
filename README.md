@@ -91,7 +91,9 @@ To create a back-log for the application and to also keep track of my progress w
 
 
 ### Testing
-The Testing for the application was done using pytest in conjunction with selenium module, the test covered  
+The Testing for the application was done using pytest in conjunction with selenium module, the test only covered the pages that doesn't require login using the backend test. but using seleinum a test to the login protected was preformed successfully although it doesn't show on the coverage report.
+<img src="Documentation/CoverageReport.png" alt="Coverage Report" width="80%" height="70%"/>
+
 
 ### Deployment 
 
