@@ -17,8 +17,7 @@ A solo project to fulfill the DevOps Fundamentals Project Specifications
 
 <a name="brief"></a>
 ## Brief 
-The client ( My Step-Son ) wanted an application to help him keep track of certain premier league players and save some details that he will later on perform statistical calculations on to help him predict the player’s future performance.
-He wanted the freedom to add or remove players as needed and also the freedom to edit or remove certain stats on certain dates for certain players.
+The client ( My Step-Son ) wanted an application to help him keep track of certain premier league players and save some details that he will later on perform statistical calculations on to help him predict the player’s future performance,He wanted the freedom to add or remove players as needed and also the freedom to edit or remove certain stats on certain dates for certain players.
 <a name= 'solution'></a>
 ## Solution
 
@@ -61,14 +60,14 @@ This one was mitigated by using micro VM instances as they don’t cost much
 ## Kanban Board
 To create a back-log for the application and to also keep track of my progress while developing the application, I used Trello Board. It contained all the user stories and my To Do list. It gets updated regularly.
 
-<img src="Documentation/TrelloBoard.png" alt="Trello Board" width="80%" height="80%"/>
+<img src="Documentation/TrelloBoard.png" alt="Trello Board" width="90%" height="90%"/>
 
 
 <a name="erd"></a>
 ## Entity Relationship Diagrams
 #### Initial ERD plan
 
-<img src="Documentation/Initial_ERD_plan.jpg" alt="Initial ERD" width="100%" height="80%"/>
+<img src="Documentation/Initial_ERD_plan.jpg" alt="Initial ERD" width="60%" height="80%"/>
 
 #### Delivered ERD solution
 
