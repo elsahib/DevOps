@@ -1,36 +1,26 @@
 # Soccer Players Tracker
-A solo project to fulfill the DevOps Fundamentals Project Specifications 
-
+A solo project to fulfill the DevOps Fundamentals Project Specifications
+ 
 ## Index
-[Brief](#brief)
-   * [Solution](#solution)
-
-[Architecture](#architecture)
-   * [Entity Relationship Diagrams](#erd)
-
-[Risk Assessment](#risks)
-   * [Risk Sssessment Table](#risks)
-   * [Explanations](#risks_expl)
-
-[User sotry](#user_sotry)
-   * [Use case diagram](#use_case)
-
-[Testing](#testing)
-
-
-[Deployment](#depl)
-   * [Technologies Used](#tech)
-
-
-[Front End Design](#FE)
-
+* [Brief](#brief)
+* [Solution](#solution)
+* [Risk Assessment](#risks)
+* [Kanban!](#kan)
+* [Entity Relationship Diagrams](#erd)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [User Web Interface](#UWI)
+* [Relevant Information and Links](#rel)
+ 
+ 
+ 
+ 
 <a name="brief"></a>
-##Brief 
-The client ( My Step-Son ) wanted an application to help him keep track of certain premier league players and save some details that he will later on perform statistical calculations on to help him predict the player’s future performance.
-He wanted the freedom to add or remove players as needed and also the freedom to edit or remove certain stats on certain dates for certain players.
+## Brief
+The client ( My Step-Son ) wanted an application to help him keep track of certain premier league players and save some details that he will later on perform statistical calculations on to help him predict the player’s future performance,He wanted the freedom to add or remove players as needed and also the freedom to edit or remove certain stats on certain dates for certain players.
 <a name= 'solution'></a>
-Working on the Solution: 
-
+## Solution
+ 
 To workout the solution utilising the supporting tools, technologies and methodologies covered during the training in the academy, I’ve decided the following:
  
 * Adopt Agile methods to manage my project
