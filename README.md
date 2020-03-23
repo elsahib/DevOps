@@ -2,15 +2,15 @@
 A solo project to fulfill the DevOps Fundamentals Project Specifications 
 
 ## Index
-[Brief](#brief)
-[Solution](#solution)
-[Risk Assessment](#risks)
-[Kanban!](#kan)
-[Entity Relationship Diagrams](#erd)
-[Testing](#testing)
-[Deployment](#deployment)
-[Front End Design](#FE)
-[Relevent Information and Links](#rel)
+* [Brief](#brief)
+* [Solution](#solution)
+* [Risk Assessment](#risks)
+* [Kanban!](#kan)
+* [Entity Relationship Diagrams](#erd)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Front End Design](#FE)
+* [Relevent Information and Links](#rel)
 
 
 
