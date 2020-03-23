@@ -29,7 +29,7 @@ A solo project to fulfill the DevOps Fundamentals Project Specifications
 The client ( My Step-Son ) wanted an application to help him keep track of certain premier league players and save some details that he will later on perform statistical calculations on to help him predict the player’s future performance.
 He wanted the freedom to add or remove players as needed and also the freedom to edit or remove certain stats on certain dates for certain players.
 <a name= 'solution'></a>
-### Solution
+## Solution
 
 To workout the solution utilising the supporting tools, technologies and methodologies covered during the training in the academy, I’ve decided the following:
 
@@ -43,9 +43,9 @@ To workout the solution utilising the supporting tools, technologies and methodo
 * Test the application
 * Deploy the application
 
-Let's cover as musch as possible from above
+Let's cover as much as possible from above
 
-## Risk Assessment
+### Risk Assessment
 | Risks                            | Likelihood    | Impact       | 
 | -------------------------------- |:-------------:| :-----------:| 
 | Wrong interpretation of client needs | Low           | High         | 
@@ -67,10 +67,11 @@ This risk was mitigated by using the best practice of exporting sensitive inform
 This one was mitigated by using micro VM instances as they don’t cost much
 
 
-Kanban Board
+### Kanban Board
 To create a back-log for the application and to also keep track of my progress while developing the application, I used Trello Board. It contained all the user stories and my To Do list. It gets updated regularly.
 
-Images
+<img src="Documentation/TrelloBoard.png" alt="Trello Board" width="60%" height="60%"/>
+
 
 <a name="erd"></a>
 ### Entity Relationship Diagrams
@@ -81,7 +82,7 @@ Images
 #### Delivered ERD solution
 
 
-<img src="Documentation/Final_ERD.jpg" alt="Initial ERD" width="80%" height="70%"/>
+<img src="Documentation/Final_ERD.jpg" alt="Final ERD" width="80%" height="70%"/>
 
 
 The database structure and tables needs to be defined and the relationship between each table should be clear
