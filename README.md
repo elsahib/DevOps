@@ -9,7 +9,7 @@ A solo project to fulfill the DevOps Fundamentals Project Specifications
 * [Entity Relationship Diagrams](#erd)
 * [Testing](#testing)
 * [Deployment](#deployment)
-* [Front End Design](#FE)
+* [User Web Interface](#UWI)
 * [Relevent Information and Links](#rel)
 
 
@@ -101,9 +101,8 @@ To get this app running locally on an ubuntu machine below are extra things to c
 * Install Requirements.txt in a virtual enviroment and activate it.
 * Run the Application.
 
-
-## Web Application Screenshots
-<img src="Documentation/app1.png" alt="Coverage Report" width="100%" height="100%"/>
+<a name="UWI"></a>
+## User Web Interface
 
 ### Home Page without Log in
 <img src="Documentation/app1.png" alt="Coverage Report" width="100%" height="100%"/>
@@ -118,9 +117,9 @@ To get this app running locally on an ubuntu machine below are extra things to c
 <img src="Documentation/app4.png" alt="Coverage Report" width="100%" height="100%"/>
 
 ### Author
-Osman Elsahib
+_Osman Elsahib_
 ### Acknowledgements
-My deepest regards and appreciation goes to the QA Academy team, and even more special regards goes to Luke and Ben for their wonderful delivery of the training materials and their non-stop support.
+My deepest regards and appreciation goes to the QA Academy team, and even more special regards goes to my direct trainers for their wonderful delivery of the training materials and their non-stop support.
 
 
 
