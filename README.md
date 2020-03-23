@@ -5,12 +5,12 @@ A solo project to fulfill the DevOps Fundamentals Project Specifications
 [Brief](#brief)
    * [Solution](#solution)
 
-[Architecture]
-   * [Entity Relationship Diagrams](#erd)
-
 [Risk Assessment](#risks)
    * [Risk Sssessment Table](#risks)
    * [Explanations](#risks_expl)
+
+[Architecture]
+   * [Entity Relationship Diagrams](#erd)
 
 [User sotry](#user_sotry)
    * [Use case diagram](#use_case)
@@ -43,22 +43,28 @@ To workout the solution utilising the supporting tools, technologies and methodo
 * Test the application
 * Deploy the application
 
-Detailed Breakdown for each point from above
+Let's cover as musch as possible from above
 
-Possible risks:
+## Risk Assessment
 | Risks                            | Likelihood    | Impact       | 
 | -------------------------------- |:-------------:| :-----------:| 
 | Wrong interpretation of client needs | Low           | High         | 
 | Lack of Technical knowledge      | Medium        |   Medium     | 
-| Automation causing issues        | Medium        |  High        | 
-| Exposure of sensitive information  | High     |    High | 
-| Running out of GCP credit        |  Very Low     |    Low       | 
+| Automation causing issues        | Low            |  High        | 
+| Exposure of sensitive information  | Low     |    High | 
+| Running out of GCP credit        |   Low     |    High       | 
 
-Wrong interpretation of client needs.
-Lack of Technical knowledge.
-Automation causing issues
-Exposure of sensitive information
-Running out of GCP free Balance.
+### Wrong interpretation of client needs
+This risk was mitigated by having regular meetings with the client throughout the development cycle to ensure that the product is meeting the client expectations.
+### Lack of Technical knowledge
+This risk was mitigated by constantly reviewing each step and refereing to documentations and best practices provided in the training and from other sources
+### Automation causing issues
+This risk was mitigated by testing the automation process with a simple ‘Hello World’ application to ensure that the CI Pipeline is functional, Also keeping the server on to avoid having the IP address change
+### Exposure of sensitive information
+This risk was mitigated by using the best practice of exporting sensitive information as variables for the each application administration session only
+ 
+### Running out of GCP free Balance
+This one was mitigated by using micro VM instances as they don’t cost much
 
 
 Kanban Method:
