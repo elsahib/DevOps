@@ -99,6 +99,16 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code, 302)
 
 #trying to test login protected pages
+    # def test_login(self):
+    #     self.client.post('/login', data=dict(
+    #     email='admin@admin.com',
+    #     password='admin2016'
+    #     ), follow_redirects=True)
+
+    #     res = self.client.get("/")
+
+    #     assert "adding" in res.data
+
 
 # class TestViews2(TestBase):
 
