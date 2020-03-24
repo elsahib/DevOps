@@ -51,7 +51,7 @@ This risk was mitigated by constantly reviewing each step and referring to docum
 ##### Automation causing issues
 This risk was mitigated by testing the automation process with a simple ‘Hello World’ application to ensure that the CI Pipeline is functional, Also keeping the server on to avoid having the IP address change
 ##### Exposure of sensitive information
-This risk was mitigated by using the best practice of exporting sensitive information as variables for the each application administration session only
+This risk was mitigated by using the best practice of exporting sensitive information as variables for each administration session only. This way sensitive information will not be part of the application code on git hub ( although currently it shows on Jenkins console log, trying to figure out a way to hide it from there also )
 ##### Running out of GCP free Balance
 This one was mitigated by using micro VM instances as they don’t cost much
  
