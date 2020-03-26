@@ -88,7 +88,7 @@ Application deployment is automated using a webhook from github to the CI server
 <a name="rel"></a>
 ## Relevant information and links
  
-* Application link : http://35.246.46.9:8080/
+* Application link : http://35.189.64.220:8080/
 * Trello Board Link: https://trello.com/b/MYYfqs6z/soccer-players-tracker
  
 To get this app running locally on an ubuntu machine below are extra things to consider.
