@@ -1,0 +1,16 @@
+# this is a dockerignore file
+# comments can be made with conventional '#'
+
+# ignore a sensitive file:
+secrets/passwords
+.env
+# ignore all markdown files:
+*.md
+
+# ignore any text files in a sub directory:
+*/*.txt
+
+# all markdown files have been ignored,
+# but make an exception for the README.md:
+!README.md
+
