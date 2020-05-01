@@ -115,7 +115,16 @@ To get this app running locally on an ubuntu machine below are extra things to c
  
 ### Players View Page
 <img src="Documentation/app4.png" alt="Coverage Report" width="100%" height="100%"/>
- 
+ ## Update
+ you can now run it on docker using the image which is alreayd on docker hub 'elsahib/devops' use this command to have it running in 
+ development server 
+ 1. export your Database URI and secret key to your shell session
+ 2. run the commnad "docker run -d -p 5000:5000 -e SECRET_KEY -e DATABASE_URI --name devops elsahib/devops"
+ 3. visit in your browser visit 'http://you_docker_server_IP:5000/'
+
+ You can also deploy it on AKS unsing the devops.yaml file.
+ you will need to substitute the values for the DATABASE_URI and SECRET_KEY with your exported values using this command ' sed -e "s,{{DATABASE_URI}},$DATABASE_URI,g" -e "s,{{SECRET_KEY}},$SECRET_KEY,g" devops.yaml | kubectl apply -f - '
+
 ### Author
 _Osman Elsahib_
 ### Acknowledgements

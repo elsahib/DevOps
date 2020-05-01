@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops
+spec:
+  selector:
+    app: devops
+  ports: 
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops
+  labels: 
+    app: devops
+spec:
+  selector:
+    matchLabels:
+      app: devops
+  template:
+    metadata:
+      labels:
+        app: devops
+    spec:
+      containers:
+      - name: devops
+        image: elsahib/devops
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DATABASE_URI
+          value: "{{DATABASE_URI}}"
+        - name: SECRET_KEY
+          value: "{{SECRET_KEY}}"
